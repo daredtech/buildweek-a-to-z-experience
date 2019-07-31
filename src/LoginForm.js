@@ -4,6 +4,15 @@ import { Form, Button, Message} from 'semantic-ui-react';
 import axios from 'axios';
 import { get } from 'https';
 
+function axiosWithAuth() {
+    const token = window.localStorage.getItem('token');
+    return axios.create({
+        headers: {
+            Authorization: token
+        }
+    })
+}
+
 const LoginForm = () => {
     
     const [user, setUser] = useState({username: '', password: ''});
@@ -26,17 +35,18 @@ const LoginForm = () => {
 
     const [data, setData] = useState([]);
     useEffect(() => {
-        axios.get('link with users', {
-            headers: {
-                Authorizations: window.localStorage.getItem('token')
-            }
-        })
+        // axios.get('link with users', {
+        //     headers: {
+        //         Authorizations: window.localStorage.getItem('token')
+        //     }
+        axiosWithAuth().get('link')
+        // })
         .then(res => {
             setData(res.data);
         })
         .catch(
             error => {
-                console.log('unable to get data');
+                console.log('unable to get data', error);
             }
         )
 
