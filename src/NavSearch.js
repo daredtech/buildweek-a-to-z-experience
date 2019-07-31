@@ -1,5 +1,5 @@
 import React from 'react';
-import {Input, Image, Icon} from 'semantic-ui-react';
+import {Input, Image} from 'semantic-ui-react';
 import NavButton from './NavButton'
 
 const NavSearch = () => {

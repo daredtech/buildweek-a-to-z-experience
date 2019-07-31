@@ -1,9 +1,9 @@
 import React from 'react';
 import NavBar from './NavBar';
-import ExperienceTypeList from './ExperienceTypeList';
-import AllExperiences from './AllExperiences';
+// import ExperienceTypeList from './ExperienceTypeList';
+// import AllExperiences from './AllExperiences';
 import LoginForm from './LoginForm';
-import SignUp from './SignUp';
+// import SignUp from './SignUp';
 import './App.css';
 
 function App() {
@@ -15,8 +15,8 @@ function App() {
 
       {/* what values will we have, where are we making axios to? */}
       
-      {/* <LoginForm/>
-      <SignUp/> */}
+      <LoginForm/>
+      {/* <SignUp/> */}
 
     </div>
   );
